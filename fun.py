@@ -38,7 +38,7 @@ while n>0:
     temp = bme280.temperature
     temperatures.append(temp)
     average_temp = average(temperatures)
-    print('The average temperature is', average_temp)	
+    print('The average temperature is', round(average_temp,2)	
 
 #Made a function to calulcate average
 
