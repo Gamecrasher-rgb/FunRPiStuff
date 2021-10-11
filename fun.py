@@ -2,7 +2,7 @@
 import board
 #from adafruit_bme280 import basic as adafruit_bme280
 import numpy as np
-from guizero import App, Text
+from guizero import *
 import numpy as np
 
 #i2c = board.I2C()
@@ -16,15 +16,16 @@ def average(num):
 	
 	return avg
 
-app = App(title="Temperatures")
+app = App(title="Temperature")
 
-
-while True:
-    temp = np.random.rand(20,30)
+def do_nothing():
+    temp = np.random.random(20,30)
     temperatures.append(temp)
-    average_temp = average(temperatures)
-    welcome_message = Text(app, text=np.round(average_temp,2))
-    app.display()
+    averagetemp = average(temperatures)
+    text = Text(app,text = str(averagetemp))
+button = PushButton(app, command=do_nothing)
+app.display()
+
 
 
 
